@@ -1,0 +1,127 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    background-color: #0B2149;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.video-section img {
+    align-items: left;
+    /* border: 1px solid #dddddd; */
+
+  border-radius: 10px;
+  padding: 50px;
+  width: 600px;
+}
+
+
+
+.description {
+    width: 50%;
+}
+
+.description h2 {
+    color: #6DB5E7;
+}
+
+.description p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input[type="radio"],
+form input[type="number"],
+form input[type="text"] {
+    margin-right: 10px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+form button {
+    display: inline-block;
+    background-color: #f02b3b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+.amount{
+    margin-left: 65px;
+}
+.amount-01{
+    margin-left: 56.5px;
+}
+footer {
+    background-color: #003087;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+    display: flex; /* Make footer a flex container */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 200px; /* Ensure enough height for layout */
+    width: 100%;
+    position: static;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #F57C00;
+}

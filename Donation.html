@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Crisis response Donation</title>
+    <link rel="stylesheet" href="Donation.css">
+    <link rel="stylesheet" href="nav.css">    
+</head>
+<body>
+    <nav>
+        <div class="login"><a href=""><span>Logo</span></a>
+        </div>
+        <ul>
+            <li><a href="landing.html">Home</a></li>
+            <li><a href="author.html">Authorities</a></li>
+            <li><a href="Donation.html">Fund Us</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="login">
+            <a href="#"><span>Login</span></a>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>National Crisis Response Donation</h1>
+        </header>
+        <div class="content">
+            <div class="video-section">
+               <img src="picture/donation.jpg" alt="">
+            </div>
+            <div class="description">
+                <h2>DONATE NOW</h2>
+                <p>Support National Crisis Response by donating today. Your contributions help us provide essential aid and support to those affected by natural disasters in Bangladesh. Every donation, big or small, makes a significant impact. Join us in making a difference and helping communities rebuild and recover a new Bangladesh.</p>
+                <form action="#" method="post">
+                    <label>
+                        <input type="radio" name="amount" value="1300"> 1,000 ৳
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="2600"> 2,000 ৳
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="3900"> 3,000 ৳
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="5200"> 5,000 ৳
+
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="6500"> 10,000 ৳
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="other"> Other
+                    </label>
+                    <label>
+                        Any Donation Amount: <input type="number" name="custom_amount" min="1">
+                    </label>
+                    <label>
+                        Donor Name: <input class="amount" type="text" name="donor_name" required>
+                    </label>
+                    <label>
+                        Phone / Email: <input class="amount-01"  type="text" name="contact" required>
+                    </label>
+                    <button type="submit">Donate</button>
+                </form>
+            </div>
+        </div>
+            <blockquote>
+                <p>“The believer’s shade on the Day of Resurrection will be his charity.” </p>
+                <cite>(Al-Tirmidhi)</cite>
+            </blockquote>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing a platform for reporting and managing crises efficiently and effectively.</p>
+            </div>
+        
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@crisisresponse.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>&copy; National Crisis Response | Designed by The ironer201</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const otherRadio = document.querySelector('input[name="amount"][value="other"]');
+            const customAmountLabel = document.querySelector('input[name="custom_amount"]').parentElement;
+
+            customAmountLabel.style.display = 'none';
+
+            otherRadio.addEventListener('change', function() {
+                if (this.checked) {
+                    customAmountLabel.style.display = 'block';
+                }
+            });
+
+            document.querySelectorAll('input[name="amount"]').forEach(function(radio) {
+                if (radio.value !== 'other') {
+                    radio.addEventListener('change', function() {
+                        customAmountLabel.style.display = 'none';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

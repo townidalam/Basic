@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>admin panel</title>
+</head>
+<body>
+    <nav>
+        <div class="login"><a href=""><span>Logo</span></a>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Quick Report</a></li>
+            <li><a href="#">Passive report</a></li>
+            <li><a href="#">Dataset</a></li>
+            <li><a href="#">Authority</a></li>
+        </ul>
+        <div class="login">
+            <a href="#"><span class="login-icon"><i class="fa-solid fa-user"></i></span></a>
+        </div>
+    </nav>
+    <div class="table-quickreport">
+      <table id="reportTable">
+        <thead>
+          <tr>
+            <th>IP Address</th>
+            <th>Message</th>
+            <th>Date & Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- New rows will be added here -->
+        </tbody>
+      </table>
+    </div>
+    <div class="test">
+      <form id="reportForm">
+        <textarea name="text" id="text" placeholder="Enter your text" required></textarea>
+        <button id="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      document.getElementById("reportForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+  
+        const message = document.getElementById("text").value.trim();
+        if (!message) return alert("Please enter a message!");
+  
+        // 1. Get the user's public IP address using ipify API
+        let ip = "Unavailable";
+        try {
+          const response = await fetch("https://api.ipify.org?format=json");
+          const data = await response.json();
+          ip = data.ip;
+        } catch (err) {
+          console.error("Failed to fetch IP address", err);
+        }
+  
+        // 2. Get the current date & time
+        const dateTime = new Date().toLocaleString();
+  
+        // 3. Insert a new row into the table
+        const table = document.getElementById("reportTable").getElementsByTagName("tbody")[0];
+        const newRow = table.insertRow();
+  
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+  
+        cell1.textContent = ip;
+        cell2.textContent = message;
+        cell3.textContent = dateTime;
+  
+        // 4. Reset the form
+        document.getElementById("reportForm").reset();
+      });
+    </script>
+</body>
+</html>

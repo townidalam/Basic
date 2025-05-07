@@ -1,0 +1,202 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: margin-top 0.3s ease;
+    background-color: #E0E0E0;
+}
+/* Two-Side Container */
+.twoside {
+    display: flex;
+
+    gap: 30px; /* Space between left and right */
+    max-width: 100%; /* Limit width for larger screens */
+    margin: 30px auto; /* Center with top/bottom margin */
+    padding: 20px;
+    background-color: #E0E0E0; /* Light gray background from your theme */
+    border-radius: 10px;
+}
+
+/* Left Side */
+.left {
+    width: 30%; /* Half the container width */
+    background-color: #FFFFFF; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+}
+
+/* Left Side Paragraphs */
+.left p {
+    font-size: 18px;
+    color: #212121; /* Dark gray text */
+    
+    line-height: 1.8; /* Spacing for readability */
+     margin-bottom: 10px; /*Space between entries */
+}
+
+/* Highlight "Email" and "Phone" */
+.left p::before {
+    content: attr(data-label); /* Use a data attribute if preferred */
+    font-weight: bold;
+    color: #003087; /* Dark blue for labels */
+}
+.left .social{
+    display: flex;
+    height: auto;
+    width: 100%;
+    /* background-color: #F57C00; */
+    justify-content: space-between;
+
+}
+.left .social .name{
+    display: flex;
+    height: 100%;
+    width: 30%;
+    /* background-color: red; */
+    align-items: center;
+    padding-left: 10px;
+
+}
+.left .social .icon{
+    height: auto;
+    width: 50%;
+    border-radius: 10px;
+    /* background-color: yellow; */
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.left .social .icon i{
+    padding-top: 5px;
+    font-size: 30px;
+    padding-right: 50px;
+    transition: transform 0.3s ease;
+}
+/* First icon */
+.left .social .icon a:nth-child(1) {
+    color: #1877F2; /* Facebook blue */
+}
+
+/* Second icon */
+.left .social .icon a:nth-child(2) {
+    color: #FF0000; /* YouTube red */
+}
+
+/* Third icon */
+.left .social .icon a:nth-child(3) {
+    color: black;
+}
+.left .social .icon i:hover{
+    transform: translateY(-10px);
+}
+
+/* Right Side */
+.right {
+    width: 35%; /* Half the container width */
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 150px;
+}
+
+/* Contact Form */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form fields */
+}
+
+/* Form Inputs */
+.contact-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #003087; /* Dark blue border */
+    border-radius: 5px;
+    outline: none; /* Remove default outline */
+    background-color: #F5F5F5; /* Light gray input background */
+    color: #212121; /* Dark gray text */
+}
+textarea{
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #003087; /* Dark blue border */
+    border-radius: 5px;
+    outline: none; /* Remove default outline */
+    background-color: #F5F5F5; /* Light gray input background */
+    color: #212121; /* Dark gray text */
+    height: 300px;
+    resize: none;
+}
+/* Placeholder Styling */
+.contact-form input::placeholder {
+    color: #666; /* Medium gray */
+    opacity: 1; /* Ensure visibility */
+}
+
+/* Hover/Focus Effect for Inputs */
+.contact-form input:hover,
+.contact-form input:focus {
+    border-color: #D32F2F; /* Red for focus */
+    background-color: #FFFFFF; /* White on interaction */
+}
+
+/* Submit Button */
+.contact-form input[type="submit"] {
+    background-color: #D32F2F; /* Red */
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #B71C1C; /* Darker red */
+}
+
+footer {
+    width: 100%;
+    background-color: #003087;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+    display: flex; /* Make footer a flex container */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 200px; /* Ensure enough height for layout */
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #F57C00;
+}

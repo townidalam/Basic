@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passive Report - National Crisis Response</title>
+    <link rel="stylesheet" href="passive.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+    <nav>
+        <div class="login"><a href=""><span>Logo</span></a>
+        </div>
+        <ul>
+            <li><a href="landing.html">Home</a></li>
+            <li><a href="author.html">Authorities</a></li>
+            <li><a href="Donation.html">Fund Us</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="login">
+            <a href="login.html"><span>Login</span></a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Passive Report Submission</h1>
+
+        <!-- Survivor Gender -->
+        <label>Survivor Gender:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="survivor" value="male"> Male</label>
+            <label><input type="radio" name="survivor" value="female"> Female</label>
+            <label><input type="radio" name="survivor" value="child"> Child</label>
+            <label><input type="radio" name="survivor" value="senior"> Senior Citizen</label>
+        </div>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob">
+        <div id="age-display" class="age-text">Age: —</div>
+
+        <!-- Date of Incident -->
+        <label for="incident-date">Date of Incident:</label>
+        <input type="date" id="incident-date">
+
+        <!-- Report Type -->
+        <label for="report-type">Select Report Type:</label>
+        <select id="report-type">
+            <option value="">-- Choose an issue --</option>
+            <option value="thief">Thief</option>
+            <option value="robbery">Robbery</option>
+            <option value="violence">Violence against women and children</option>
+            <option value="cyberbullying">Cyberbullying</option>
+            <option value="conflict">Family Conflict</option>
+            <option value="eve-teasing">Eve-Teasing</option>
+            <option value="land">Land Acquisition Case</option>
+        </select>
+
+        <!-- Details -->
+        <div id="details-section" class="hidden">
+            <label for="description">Describe the issue:</label>
+            <textarea id="description" rows="5" placeholder="Please explain briefly..."></textarea>
+
+            <label for="location">Live Location:</label>
+            <input type="text" id="location" placeholder="Enter or share live location link">
+
+            <button type="submit">Submit Report</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing a platform for reporting and managing crises efficiently and effectively.</p>
+            </div>
+        
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@crisisresponse.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>&copy; National Crisis Response | Designed by The ironer201</p>
+        </div>
+    </footer>
+
+    <script>
+        const reportType = document.getElementById('report-type');
+        const detailsSection = document.getElementById('details-section');
+        const dobInput = document.getElementById('dob');
+        const ageDisplay = document.getElementById('age-display');
+
+        reportType.addEventListener('change', function () {
+
+            if (this.value) {
+                detailsSection.classList.remove('hidden');
+            } else {
+                detailsSection.classList.add('hidden');
+            }
+        });
+
+        dobInput.addEventListener('change', function () {
+            const dob = new Date(this.value);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const m = today.getMonth() - dob.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            if (!isNaN(age) && age >= 0) {
+                ageDisplay.textContent = `Age: ${age} years`;
+            } else {
+                ageDisplay.textContent = "Age: —";
+            }
+        });
+    </script>
+</body>
+</html>

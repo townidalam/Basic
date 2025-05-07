@@ -1,0 +1,527 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: margin-top 0.3s ease;
+    background-color: #E0E0E0;
+}
+
+
+
+/* logo and login */
+
+.login{
+    height: 50px;
+    width: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    transition: .5s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+  }    
+.login a{
+    margin-top: 15px;
+    color:#212121;
+    text-decoration: none;
+}
+.login .login-icon{
+    color: rgb(0, 0, 0);
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 25px;
+}
+.login:hover{
+    background-color: #6EB1D6;
+}
+/* Navigation Bar */
+nav{
+    background-color:#003087;
+    /* box-shadow: 3px 3px 5px #6EB1D6; */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    z-index: 1000;
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li{
+    height: 50px;
+    
+
+}
+nav ul li a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 25px ;
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: .5s ease;
+
+}
+li :hover{
+    background-color: #6EB1D6 ; 
+}
+/* headline in the web*/
+.headline{
+    height: 80px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    background-color: #0B2149;
+    padding: 10px;
+}
+.headline h1{
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+/* report part*/
+
+.report {
+    display: flex;
+    flex-direction: column; /* Stack textarea and button vertically */
+    align-items: center; /* Center contents */
+    width: 100%;
+    max-width: 1000px; /* Matches textarea max-width */
+    margin: 0 auto; /* Center form horizontally */
+}
+.quick-report{
+    display: static;
+    margin-top: 0px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.report-head{
+    font-weight: bold;
+    font-size: 30px;
+    /* margin-top: 20px; */
+    color: #212121;
+}
+.quick-report textarea{
+    width: 1000px;
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 60px;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 20px;
+    background-color: #FFFFFF; /* White */
+    color: #212121; /* Dark gray text */
+
+    border: none; 
+    outline: none; 
+    resize: none;
+}
+.quick-report label{
+    font-size: 25px;
+    padding: 10px;
+    color: #212121;
+}
+.check{
+    width: 20px;
+    height: 20px;
+}
+button{
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 680px; */
+    border-radius: 10px;
+    background-color: #D32F2F; /* Red */
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #f54444;
+}
+/* pop-up */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none; /* Initially hidden */
+}
+
+.popup.show {
+    display: block; /* Show the popup */
+    opacity: 1; /* Fully visible */
+}
+
+.popup.hide {
+    opacity: 0; /* Fade out */
+    transition: opacity 0.5s ease;
+}
+/* passive report information */
+
+
+/* Passive Report Section */
+
+.passive-report {
+    width: 100%;
+    height: auto;
+    gap: 10px; /* Note: gap only works with flex/grid, not used here */
+    background-image: url('picture/landerison.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* Needed for pseudo-element layering */
+    z-index: 0; /* Base layer */
+
+}
+.passive-report .bothside{
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-bottom: 35px;
+    padding-right: 20px;
+}
+
+.passive-report::before {
+    content: ""; /* Creates a pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('landerison.jpg'); /* Same image */
+    background-size: cover;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Blurs the image */
+    z-index: -1; /* Places it behind all content */
+}
+
+.passive-report h2 {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 30px;
+    color: #000000; 
+    position: relative;
+    z-index: 1;
+}
+
+.passive-report .left-side,
+.passive-report .right-side {
+    width: 50%;
+    height: 200px;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* Keeps content above blur */
+    z-index: 1; /* Above blurred layer */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: semi-transparent background */
+    margin-left: 50px;
+    border-radius: 15px;
+}
+
+.passive-report .left-side {
+    margin-top: 20px;
+    width: 50%;
+    border: 1px solid #003087;
+    padding-top: 40px;
+}
+
+.passive-report .left-side .define {
+    font-size: 20px;
+    color: black;
+}
+
+.passive-report .right-side{
+    margin-top: 20px;
+    border: 1px solid #003087;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+
+.passive-report .right-side ul {
+    padding-left: 20px;
+    text-align: left;
+    list-style-type: disc;
+    margin-left: 90px;/* Keeps your indent */
+}
+
+.passive-report .right-side li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #212121; /* Dark text for readability */
+
+}
+
+.passive-report button {
+    width: auto;
+    height: 60px;
+    margin: 10px;
+    padding-left : 70px;
+    padding-right: 70px;
+    border-radius: 10px;
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;/* Keeps it above blur */
+    z-index: 1;/*Above blurred layer*/
+}
+
+.passive-report button:hover {
+    background-color: #B71C1C;
+}
+.passive-report .btn1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 15px;
+}
+/* slide show picture */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 800px; /* Fixed height for consistency, adjust as needed */
+    overflow: hidden;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    background-color: #cfcccc;
+
+
+}
+
+.slide {
+    position: absolute; /* Stack slides on top of each other */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stack image and caption vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+    margin-top: 40px;
+}
+
+.slide.active {
+    opacity: 1; /* Show active slide */
+}
+
+.slide img {
+    width: 100%; /* Limit image size */
+    height: 100%; /* Ensure it fits within container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+.slide .caption {
+    margin-top: 20px; /* Space between image and caption */
+    font-size: 25px;
+    color: #000; /* Black for visibility, adjust if needed */
+    text-align: center;
+    padding: 0 10px; /* Prevent text from touching edges */
+    width: 100%; /* Match image width for consistency */
+}
+/* Fund Me Section */
+.fundme {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #a19e9e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    min-height: 300px;
+    margin-top: 20px;
+}
+.fundme .headfundme {
+    margin-bottom: 20px;
+    width: 150px;
+    height: auto;
+    background-color: rgb(6, 30, 248);
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 19px;
+}
+.fundme .headfundme p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000; /* Red color */
+}
+.fundme .fundme-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%; /* Ensures it takes full width */
+}
+.fundme .left-side,
+.fundme .right-side {
+    width: 45%;
+    padding: 20px;
+    background-color: #7d7878; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+}
+.fundme .right-side{
+    background-color: #a19e9e;
+    box-shadow: 0 0 0 rgba(245, 243, 243, 0.1);
+    margin-top: -25px;
+}
+.fundme .right-side img {
+    max-width: 80%; /* Ensures image fits within container */
+    height: 350px; /* Maintains aspect ratio */
+    border-radius: 10px; /* Matches container's rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+}
+.fundme .left-side{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.fundme .left-side .define {
+    font-size: 25px;
+    color: #212121; /* Dark gray text */
+    line-height: 1.6;
+}
+.fundme .left-side ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+.fundme .left-side li {
+    margin-bottom: 10px;
+    font-size: 25px;
+    line-height: 1.6;
+    color: #212121; /* Dark gray text */
+}
+.fundme button {
+    align-self: center; /* Center horizontally */
+    margin-top: auto; /* Pushes button to the bottom */
+    margin-bottom: 20px; /* Space from the bottom edge */
+    border-radius: 10px;
+    background-color: #D32F2F; /* Red */
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.fundme button:hover {
+    background-color: #B71C1C; /* Darker red */
+}
+/* Footer Styling */
+footer {
+    background-color: #003087;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+    display: flex; /* Make footer a flex container */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 200px; /* Ensure enough height for layout */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #F57C00;
+}
+
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+/* responsive part */
+
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+    .login {
+        margin: 10px 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .headline h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .passive-report .left-side,
+    .passive-report .right-side {
+        width: 45%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .slide .caption {
+        font-size: 1rem;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .fundme{
+        display: flex;
+    }
+    .fundme .left-side,
+    .fundme .right-side {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+

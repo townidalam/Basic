@@ -1,0 +1,76 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid black;
+    text-align: center;
+    width: 20%;
+}
+
+
+th {
+    background-color: #007BFF;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+/* Set column widths manually */
+th:nth-child(1), td:nth-child(1) {
+    width: 20%;  /* Adjust IP Address column */
+}
+th:nth-child(2), td:nth-child(2) {
+    width: 60%;  /* Adjust Message column */
+}
+th:nth-child(3), td:nth-child(3) {
+    width: 20%;  /* Adjust Date & Time column */
+}
+.test{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    align-items: center;
+}
+textarea{
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    height: 250px;
+  }
+  
+  /* Style the button */
+  button{
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 130px;
+    height: 50px;
+  }

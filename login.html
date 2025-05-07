@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & sign up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="login.css">
+    <!-- <style>
+        
+    </style> -->
+</head>
+<body>
+    <nav>
+        <div class="login"><a href=""><span>Logo</span></a>
+        </div>
+        <ul>
+            <li><a href="landing.html">Home</a></li>
+            <li><a href="author.html">Authorities</a></li>
+            <li><a href="Donation.html">Fund Us</a></li>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="login">
+            <a href="#"><span class="login-icon"><i class="fa-solid fa-user"></i></span></a>
+        </div>
+    </nav>
+    <!-- main body -->
+     <div class="full">
+        <div class="container">
+            <input type="checkbox" id="toggle">
+            <div class="form-container">
+                <form class="login-form">
+                    <h2>Login</h2>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <label for="toggle" class="toggle-label">Don't have an account? Sign up</label>
+                    <div class="test">
+                        <div class="user">
+                            <a href="">User</a>
+                        </div>
+                        <div class="admin">
+                            <a href="admin.html">Admin</a>
+                        </div>
+                    </div>
+                </form>
+
+    
+                <form class="signup-form">
+                    <h2>Sign Up</h2>
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username-signup" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email-signup">Email</label>
+                        <input type="email" id="email-signup" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="number-signup">Phone</label>
+                        <input type="number" id="phone-signup" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="blood-signup">Blood Group</label>
+                        <input type="text" id="blood-signup" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password-signup">Password</label>
+                        <input type="password" id="password-signup" required>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                    <label for="toggle" class="toggle-label">Already have an account? Login</label>
+                </form>
+            </div>
+        </div>
+     </div>
+    
+</body>
+</html>
