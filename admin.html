@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>admin panel</title>
+</head>
+<body>
+    <nav>
+        <div class="login"><a href=""><span>Logo</span></a>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Quick Report</a></li>
+            <li><a href="#">Passive report</a></li>
+            <li><a href="#">Dataset</a></li>
+            <li><a href="#">Authority</a></li>
+        </ul>
+        <div class="login">
+            <a href="#"><span class="login-icon"><i class="fa-solid fa-user"></i></span></a>
+        </div>
+    </nav>
+    <div class="table-quickreport">
+      <table id="reportTable">
+        <thead>
+          <tr>
+            <th>IP Address</th>
+            <th>Message</th>
+            <th>Date & Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- New rows will be added here -->
+        </tbody>
+      </table>
+    </div>
+    <!-- <div class="test">
+      <form id="reportForm">
+        <textarea name="text" id="text" placeholder="Enter your text" required></textarea>
+        <button id="submit">Submit</button>
+      </form>
+    </div> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async function() {
+    const tbody = document.querySelector("#reportTable tbody");
+
+    try {
+        const response = await fetch('/get-reports');
+        const reports = await response.json();
+
+        tbody.innerHTML = ''; // Clear existing rows
+        reports.forEach(report => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${report.ip}</td>
+                <td>${report.message}</td>
+                <td>${report.dateTime}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    } catch (err) {
+        console.error("Error fetching reports:", err);
+        tbody.innerHTML = '<tr><td colspan="3">Failed to load reports</td></tr>';
+    }
+});
+    </script>
+</body>
+</html>
